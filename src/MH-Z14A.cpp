@@ -95,7 +95,7 @@ int MHZ14A::readConcentrationAnalog() {
     if (analogPin == -1) return -1;
 
     float voltage = analogRead(analogPin) * 3.3 / 4095.0;
-    int gas_concentration = int((voltage - 0.4) (_range / 1.6));
+    int gas_concentration = int((voltage - 0.4) * (_range / 1.6));
 
     return gas_concentration > 0 ? gas_concentration : 0;
 }
